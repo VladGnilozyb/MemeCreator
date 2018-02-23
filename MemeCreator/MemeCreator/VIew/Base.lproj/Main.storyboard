@@ -114,7 +114,7 @@
                                         <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="PresentCollectionView:" destination="OYU-XN-hQ5" id="qmp-61-gxe"/>
-                                            <segue destination="RQo-Ha-0cJ" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="u5Z-FW-81S"/>
+                                            <segue destination="RQo-Ha-0cJ" kind="presentation" id="kNP-hJ-NEE"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

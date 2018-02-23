@@ -2,13 +2,14 @@
 //  CreateMemeViewController.swift
 //  MemeCreator
 //
-//  Created by Владислав Гнилозуб on 2/23/18.
+//  Created by Владислав Гнилозуб on 2/14/18.
 //  Copyright © 2018 Владислав Гнилозуб. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import  UIKit
 
-class CreateMemeViewController: UIViewController {
+class CreateMemeViewController: UIViewController  {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
@@ -16,9 +17,10 @@ class CreateMemeViewController: UIViewController {
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var generateButton: UIBarButtonItem!
     @IBOutlet weak var conteinerImageAndText: UIView!
-    private var picker = UIImagePickerController()
-    private var meme: Meme!
-    private var textFieldDelegate: TextFieldDelegate!
+    var meme: Meme!
+    let picker = UIImagePickerController()
+    private let textFieldDelegate = TextFieldDelegate()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,30 +45,19 @@ class CreateMemeViewController: UIViewController {
         unsubscribeFromKeyboardNotifications()
     }
     
-    //MARK: work with keyboard
-    
-    @objc func keyboardWillShow(_ notification:Notification) {
-        view.frame.origin.y = 0 - getKeyboardHeight(notification)
+    //MARK: work with UIPicker
+    @IBAction func openCamera(_ sender: UIBarButtonItem) {
+        picker.allowsEditing = false
+        picker.sourceType = UIImagePickerControllerSourceType.camera
+        picker.cameraCaptureMode = .photo
+        picker.modalPresentationStyle = .fullScreen
+        present(picker, animated: true, completion: nil)
     }
     
-    @objc func keyboardWillHide(_ notification:Notification) {
-        view.frame.origin.y = 0
-    }
-    
-    func getKeyboardHeight(_ notification:Notification) -> CGFloat {
-        let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
-        return keyboardSize.cgRectValue.height
-    }
-    
-    func subscribeToKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
-    }
-    
-    func unsubscribeFromKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    @IBAction func openPhotoLibrary(_ sender: UIBarButtonItem) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
     }
     
     //MARK: work with creating meme
@@ -108,20 +99,31 @@ class CreateMemeViewController: UIViewController {
         
     }
     
-    //MARK: Work With UiPickerController
     
-    @IBAction func openCamera(_ sender: UIBarButtonItem) {
-        picker.allowsEditing = false
-        picker.sourceType = UIImagePickerControllerSourceType.camera
-        picker.cameraCaptureMode = .photo
-        picker.modalPresentationStyle = .fullScreen
-        present(picker, animated: true, completion: nil)
+    //MARK: work with keyboard
+    
+    @objc func keyboardWillShow(_ notification:Notification) {
+        view.frame.origin.y = 0 - getKeyboardHeight(notification)
     }
     
-    @IBAction func openPhotoLibrary(_ sender: UIBarButtonItem) {
-        picker.allowsEditing = false
-        picker.sourceType = .photoLibrary
-        present(picker, animated: true, completion: nil)
+    @objc func keyboardWillHide(_ notification:Notification) {
+        view.frame.origin.y = 0
+    }
+    
+    func getKeyboardHeight(_ notification:Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
 }
 
@@ -136,3 +138,4 @@ extension CreateMemeViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true, completion: nil)
     }
 }
+

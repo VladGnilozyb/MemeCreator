@@ -11,9 +11,11 @@ import Firebase
 
 
 class ImageCollectionViewController: UIViewController {
+    
     private var memes = [Meme]()
-    @IBOutlet weak var imageCollection: UICollectionView!
-
+    @IBOutlet weak var origignalImageCollection: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchImage()
@@ -30,14 +32,14 @@ class ImageCollectionViewController: UIViewController {
                         DispatchQueue.main.async(execute: {
                             let originalImage = Meme(originalImage: UIImage(data: data!)!)
                             self.memes.insert(originalImage, at: 0)
-                            self.imageCollection.reloadData()
+                            self.origignalImageCollection.reloadData()
                         })
                     }
                 })
             }
         })
     }
-
+    
     @IBAction func closeVC(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
@@ -45,6 +47,7 @@ class ImageCollectionViewController: UIViewController {
 }
 
 extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
