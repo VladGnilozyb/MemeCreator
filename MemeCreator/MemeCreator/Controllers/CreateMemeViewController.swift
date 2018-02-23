@@ -33,6 +33,15 @@ class CreateMemeViewController: UIViewController {
         
     }
     
+    //MARK: work with creating meme
+    func generateMemedImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: imageView.bounds.size)
+        let image = renderer.image { ctx in
+            conteinerImageAndText.drawHierarchy(in: imageView.bounds, afterScreenUpdates: true)
+        }
+        return image
+    }
+    
     //MARK: Work With UiPickerController
     
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
