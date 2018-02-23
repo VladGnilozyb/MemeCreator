@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21BAA3DC4141751A80C778BC /* Pods_MemeCreator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F38C4504E316389A862919E /* Pods_MemeCreator.framework */; };
+		B9CC2FA0204053BE00FF7747 /* CreateMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC2F9F204053BE00FF7747 /* CreateMemeViewController.swift */; };
 		B9D5330E203F8C0300F2831D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9D5330D203F8C0300F2831D /* GoogleService-Info.plist */; };
 		B9D53317203FE62A00F2831D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9ED0DD3200F4AA800DFE73B /* Info.plist */; };
 		B9ED0DC5200F4AA800DFE73B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED0DC4200F4AA800DFE73B /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		04E9A2F7FCE32561E4B631D3 /* Pods-MemeCreator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemeCreator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemeCreator/Pods-MemeCreator.debug.xcconfig"; sourceTree = "<group>"; };
 		1F38C4504E316389A862919E /* Pods_MemeCreator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemeCreator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75334AD70CEC5EF335FFD65 /* Pods-MemeCreator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemeCreator.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemeCreator/Pods-MemeCreator.release.xcconfig"; sourceTree = "<group>"; };
+		B9CC2F9F204053BE00FF7747 /* CreateMemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMemeViewController.swift; sourceTree = "<group>"; };
 		B9D5330D203F8C0300F2831D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B9ED0DC1200F4AA800DFE73B /* MemeCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9ED0DC4200F4AA800DFE73B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		B9D53313203FDBEF00F2831D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B9CC2F9F204053BE00FF7747 /* CreateMemeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CC2FA0204053BE00FF7747 /* CreateMemeViewController.swift in Sources */,
 				B9ED0DC5200F4AA800DFE73B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
