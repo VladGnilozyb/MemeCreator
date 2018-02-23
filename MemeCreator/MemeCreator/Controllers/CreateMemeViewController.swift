@@ -96,6 +96,18 @@ class CreateMemeViewController: UIViewController {
         }
     }
     
+    @IBAction func clearCreatingMeme(_ sender: Any) {
+        imageView.image = nil
+        topTextField.textAlignment = .center
+        bottomTextField.textAlignment = .center
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        imageView.backgroundColor = UIColor.black
+        topTextField.delegate = textFieldDelegate
+        bottomTextField.delegate = textFieldDelegate
+        
+    }
+    
     //MARK: Work With UiPickerController
     
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
