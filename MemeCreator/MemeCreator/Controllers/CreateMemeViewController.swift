@@ -16,11 +16,31 @@ class CreateMemeViewController: UIViewController {
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var generateButton: UIBarButtonItem!
     @IBOutlet weak var conteinerImageAndText: UIView!
-
+    private var picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
+    
+    @IBAction func openCamera(_ sender: UIBarButtonItem) {
+        picker.allowsEditing = false
+        picker.sourceType = UIImagePickerControllerSourceType.camera
+        picker.cameraCaptureMode = .photo
+        picker.modalPresentationStyle = .fullScreen
+        present(picker, animated: true, completion: nil)
+    }
+    
+}
 
-
+extension CreateMemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.imageView.image = image
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }
