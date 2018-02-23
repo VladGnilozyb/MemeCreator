@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ImageCollectionViewController: UIViewController {
     private var memes = [Meme]()
@@ -14,8 +15,26 @@ class ImageCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    func fetchImage() {
+        Database.database().reference().child("meme").observe(.childAdded, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                print(dictionary["image"] as! String)
+                Storage.storage().reference(forURL: dictionary["image"] as! String).getData(maxSize: 10 * 1024 * 1024, completion: { (data, error) in
+                    if error != nil {
+                        print("**** Error, can'not dowland image because \(String(describing: error))")
+                    } else {
+                        DispatchQueue.main.async(execute: {
+                            let originalImage = Meme(originalImage: UIImage(data: data!)!)
+                            self.memes.insert(originalImage, at: 0)
+                        })
+                    }
+                })
+            }
+        })
     }
 
 
+    
 }
