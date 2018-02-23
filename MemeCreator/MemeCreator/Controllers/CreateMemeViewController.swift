@@ -9,6 +9,13 @@
 import UIKit
 
 class CreateMemeViewController: UIViewController {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var generateButton: UIBarButtonItem!
+    @IBOutlet weak var conteinerImageAndText: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
