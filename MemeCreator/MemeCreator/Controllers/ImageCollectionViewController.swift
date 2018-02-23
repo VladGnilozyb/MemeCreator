@@ -9,6 +9,8 @@
 import UIKit
 
 class ImageCollectionViewController: UIViewController {
+    private var memes = [Meme]()
+    @IBOutlet weak var imageCollection: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
