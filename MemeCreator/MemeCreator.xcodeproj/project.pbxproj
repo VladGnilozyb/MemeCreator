@@ -13,6 +13,7 @@
 		B9CC2FA4204055E800FF7747 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC2FA3204055E800FF7747 /* Meme.swift */; };
 		B9CC2FA82040568A00FF7747 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC2FA72040568A00FF7747 /* TextFieldDelegate.swift */; };
 		B9CC2FAA2040595200FF7747 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC2FA92040595200FF7747 /* ImageCollectionViewController.swift */; };
+		B9CC2FAC20405A8B00FF7747 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CC2FAB20405A8B00FF7747 /* CollectionViewCell.swift */; };
 		B9D5330E203F8C0300F2831D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9D5330D203F8C0300F2831D /* GoogleService-Info.plist */; };
 		B9D53317203FE62A00F2831D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9ED0DD3200F4AA800DFE73B /* Info.plist */; };
 		B9ED0DC5200F4AA800DFE73B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ED0DC4200F4AA800DFE73B /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		B9CC2FA3204055E800FF7747 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		B9CC2FA72040568A00FF7747 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 		B9CC2FA92040595200FF7747 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		B9CC2FAB20405A8B00FF7747 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B9D5330D203F8C0300F2831D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B9ED0DC1200F4AA800DFE73B /* MemeCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9ED0DC4200F4AA800DFE73B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				B9ED0DC8200F4AA800DFE73B /* Main.storyboard */,
 				B9ED0DCE200F4AA800DFE73B /* Assets.xcassets */,
 				B9ED0DD0200F4AA800DFE73B /* LaunchScreen.storyboard */,
+				B9CC2FAB20405A8B00FF7747 /* CollectionViewCell.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				B9CC2FAA2040595200FF7747 /* ImageCollectionViewController.swift in Sources */,
 				B9CC2FA0204053BE00FF7747 /* CreateMemeViewController.swift in Sources */,
 				B9CC2FA4204055E800FF7747 /* Meme.swift in Sources */,
+				B9CC2FAC20405A8B00FF7747 /* CollectionViewCell.swift in Sources */,
 				B9ED0DC5200F4AA800DFE73B /* AppDelegate.swift in Sources */,
 				B9CC2FA82040568A00FF7747 /* TextFieldDelegate.swift in Sources */,
 				B9CC2FA22040555E00FF7747 /* ComressImage.swift in Sources */,
