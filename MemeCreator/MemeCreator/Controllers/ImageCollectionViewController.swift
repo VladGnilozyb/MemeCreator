@@ -38,6 +38,10 @@ class ImageCollectionViewController: UIViewController {
         })
     }
 
+    @IBAction func closeVC(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
