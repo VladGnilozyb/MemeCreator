@@ -43,7 +43,7 @@ class CreateMemeViewController: UIViewController {
 extension CreateMemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.imageView.image = image
+        self.imageView.image = image?.compressImage()
         dismiss(animated: true, completion: nil)
     }
     
