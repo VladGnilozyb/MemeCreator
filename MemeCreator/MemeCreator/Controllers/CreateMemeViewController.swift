@@ -47,6 +47,19 @@ class CreateMemeViewController: UIViewController {
         meme = Meme(topText: topTextField.text!, buttonText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
     }
     
+    @IBAction func shareMeme(_ sender: UIBarButtonItem) {
+        let memeImage = generateMemedImage()
+        let myActivityView = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
+        present(myActivityView, animated: true, completion: nil)
+        myActivityView.completionWithItemsHandler = {
+            (activity, success, items, error) in
+            if success {
+                self.saveMeme()
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
     //MARK: Work With UiPickerController
     
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
