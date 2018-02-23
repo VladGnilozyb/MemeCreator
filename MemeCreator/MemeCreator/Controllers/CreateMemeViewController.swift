@@ -42,6 +42,11 @@ class CreateMemeViewController: UIViewController {
         return image
     }
     
+    func saveMeme() {
+        let memedImage = generateMemedImage()
+        meme = Meme(topText: topTextField.text!, buttonText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+    }
+    
     //MARK: Work With UiPickerController
     
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
