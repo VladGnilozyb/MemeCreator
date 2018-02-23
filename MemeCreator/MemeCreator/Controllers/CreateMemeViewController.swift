@@ -23,6 +23,8 @@ class CreateMemeViewController: UIViewController {
         
     }
     
+    //MARK: Work With UiPickerController
+    
     @IBAction func openCamera(_ sender: UIBarButtonItem) {
         picker.allowsEditing = false
         picker.sourceType = UIImagePickerControllerSourceType.camera
@@ -31,6 +33,11 @@ class CreateMemeViewController: UIViewController {
         present(picker, animated: true, completion: nil)
     }
     
+    @IBAction func openPhotoLibrary(_ sender: UIBarButtonItem) {
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
+    }
 }
 
 extension CreateMemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
