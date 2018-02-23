@@ -68,7 +68,6 @@ class CreateMemeViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
-}
     
     //MARK: work with creating meme
     func generateMemedImage() -> UIImage {

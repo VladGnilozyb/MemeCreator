@@ -154,7 +154,7 @@
         <!--chooseImage-->
         <scene sceneID="8QS-Cv-7pa">
             <objects>
-                <viewController title="chooseImage" id="RQo-Ha-0cJ" customClass="PotomPridymauName" customModule="MemeCreator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="chooseImage" id="RQo-Ha-0cJ" customClass="ImageCollectionViewController" customModule="MemeCreator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5j4-C7-SrI"/>
                         <viewControllerLayoutGuide type="bottom" id="kzg-Ps-Ez0"/>
@@ -271,6 +271,6 @@
         <image name="camera" width="50" height="50"/>
         <image name="clean" width="50" height="50"/>
         <image name="collection" width="50" height="50"/>
-        <image name="save-1" width="50" height="50"/>
+        <image name="save-1" width="25" height="25"/>
     </resources>
 </document>
