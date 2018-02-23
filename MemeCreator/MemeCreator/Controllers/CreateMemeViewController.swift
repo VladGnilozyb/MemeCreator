@@ -17,9 +17,19 @@ class CreateMemeViewController: UIViewController {
     @IBOutlet weak var generateButton: UIBarButtonItem!
     @IBOutlet weak var conteinerImageAndText: UIView!
     private var picker = UIImagePickerController()
+    private var meme: Meme!
+    private var textFieldDelegate: TextFieldDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topTextField.textAlignment = .center
+        bottomTextField.textAlignment = .center
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        imageView.backgroundColor = UIColor.black
+        topTextField.delegate = textFieldDelegate
+        bottomTextField.delegate = textFieldDelegate
+        picker.delegate = self
         
     }
     
