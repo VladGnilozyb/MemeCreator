@@ -14,7 +14,7 @@ struct Meme {
     let buttonText: String?
     let originalImage: UIImage
     let memedImage: UIImage?
-    
+
     
     init(originalImage: UIImage) {
         self.topText = nil

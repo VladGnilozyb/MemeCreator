@@ -63,6 +63,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="45"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="endEditing:" destination="OYU-XN-hQ5" eventType="editingDidBegin" id="m1P-dO-Hq2"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TbY-5e-4Wy">
                                         <rect key="frame" x="16" y="477" width="343" height="35"/>
@@ -72,6 +75,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="45"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="beginEditing:" destination="OYU-XN-hQ5" eventType="editingDidBegin" id="DTK-sf-wih"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,7 +120,7 @@
                                         <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="PresentCollectionView:" destination="OYU-XN-hQ5" id="qmp-61-gxe"/>
-                                            <segue destination="RQo-Ha-0cJ" kind="presentation" id="kNP-hJ-NEE"/>
+                                            <segue destination="RQo-Ha-0cJ" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="u5Z-FW-81S"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -154,7 +160,7 @@
         <!--chooseImage-->
         <scene sceneID="8QS-Cv-7pa">
             <objects>
-                <viewController title="chooseImage" id="RQo-Ha-0cJ" customClass="ImageCollectionViewController" customModule="MemeCreator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="chooseImage" id="RQo-Ha-0cJ" customClass="PotomPridymauName" customModule="MemeCreator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5j4-C7-SrI"/>
                         <viewControllerLayoutGuide type="bottom" id="kzg-Ps-Ez0"/>
@@ -271,6 +277,6 @@
         <image name="camera" width="50" height="50"/>
         <image name="clean" width="50" height="50"/>
         <image name="collection" width="50" height="50"/>
-        <image name="save-1" width="25" height="25"/>
+        <image name="save-1" width="50" height="50"/>
     </resources>
 </document>

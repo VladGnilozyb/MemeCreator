@@ -15,9 +15,9 @@ extension UIImage {
         let actualHeight:CGFloat = self.size.height
         let actualWidth:CGFloat = self.size.width
         let imgRatio:CGFloat = actualWidth/actualHeight
-        let maxWidth:CGFloat = 1024.0
+        let maxWidth:CGFloat = 1024
         let resizedHeight:CGFloat = maxWidth/imgRatio
-        let compressionQuality:CGFloat = 0.5
+        let compressionQuality:CGFloat = 0.1
         
         let rect:CGRect = CGRect(x: 0, y: 0, width: maxWidth, height: resizedHeight)
         UIGraphicsBeginImageContext(rect.size)

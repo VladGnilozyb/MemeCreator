@@ -20,6 +20,16 @@ class CreateMemeViewController: UIViewController  {
     var meme: Meme!
     let picker = UIImagePickerController()
     private let textFieldDelegate = TextFieldDelegate()
+
+    
+    @IBAction func beginEditing(_ sender: Any) {
+         subscribeToKeyboardNotifications()
+    }
+    
+    
+    @IBAction func endEditing(_ sender: Any) {
+        unsubscribeFromKeyboardNotifications()
+    }
     
     
     override func viewDidLoad() {
@@ -32,17 +42,17 @@ class CreateMemeViewController: UIViewController  {
         topTextField.delegate = textFieldDelegate
         bottomTextField.delegate = textFieldDelegate
         picker.delegate = self
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        subscribeToKeyboardNotifications()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        unsubscribeFromKeyboardNotifications()
+         super.viewWillAppear(animated)
+        
     }
     
     //MARK: work with UIPicker
@@ -59,7 +69,7 @@ class CreateMemeViewController: UIViewController  {
         picker.sourceType = .photoLibrary
         present(picker, animated: true, completion: nil)
     }
-    
+
     //MARK: work with creating meme
     func generateMemedImage() -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: imageView.bounds.size)
@@ -103,7 +113,7 @@ class CreateMemeViewController: UIViewController  {
     //MARK: work with keyboard
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        view.frame.origin.y = 0 - getKeyboardHeight(notification)
+        view.frame.origin.y =  0 -  getKeyboardHeight(notification)
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
@@ -138,4 +148,3 @@ extension CreateMemeViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true, completion: nil)
     }
 }
-

@@ -1,5 +1,5 @@
 //
-//  ImageCollectionViewController.swift
+//  PotomPridymauName.swift
 //  MemeCreator
 //
 //  Created by Владислав Гнилозуб on 2/23/18.
@@ -9,8 +9,7 @@
 import UIKit
 import Firebase
 
-
-class ImageCollectionViewController: UIViewController {
+class CollectionViewController: UIViewController {
     
     private var memes = [Meme]()
     @IBOutlet weak var origignalImageCollection: UICollectionView!
@@ -20,6 +19,7 @@ class ImageCollectionViewController: UIViewController {
         super.viewDidLoad()
         fetchImage()
     }
+    
     
     func fetchImage() {
         Database.database().reference().child("meme").observe(.childAdded, with: { (snapshot) in
@@ -32,22 +32,22 @@ class ImageCollectionViewController: UIViewController {
                         DispatchQueue.main.async(execute: {
                             let originalImage = Meme(originalImage: UIImage(data: data!)!)
                             self.memes.insert(originalImage, at: 0)
-                            self.origignalImageCollection.reloadData()
+                             self.origignalImageCollection.reloadData()
                         })
                     }
                 })
             }
+           
         })
     }
-    
     @IBAction func closeVC(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
 }
 
-extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
+
+extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
     }
@@ -65,3 +65,4 @@ extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionV
         }
     }
 }
+
